@@ -1,0 +1,75 @@
+/* Design tokens and shared styles. Palette comes from the DICE deck: plum, magenta, saffron, lime, cream. */
+:root {
+  --plum-900: #3E0632;
+  --plum-800: #570A47;
+  --plum-700: #6D1251;
+  --plum-600: #8A1D68;
+  --magenta: #D5367E;
+  --magenta-600: #B8246A;
+  --pink-100: #FCE7F1;
+  --pink-50: #FFF4F9;
+  --cream: #FFF8EC;
+  --cream-200: #FBEBD3;
+  --saffron: #F7A21B;
+  --saffron-100: #FFF0D2;
+  --coral: #F84857;
+  --lime: #C6C44A;
+  --rose: #E25175;
+  --teal: #0F7B6C;
+  --teal-100: #DDF3EE;
+  --ink: #2A0D24;
+  --ink-2: #5E4658;
+  --ink-3: #8C7686;
+  --line: #EEDDE6;
+  --display: 'Poppins', system-ui, sans-serif;
+  --body: 'Mulish', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; }
+body { background: var(--plum-900); color: var(--ink); font-family: var(--body); overflow: hidden; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; }
+button:focus-visible { outline: 3px solid var(--saffron); outline-offset: 2px; }
+
+.viewport { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #2A1026 0%, #140610 75%); }
+.stage { width: 1600px; height: 900px; position: relative; user-select: none; -webkit-user-select: none; overflow: hidden; background: #3E0632; --pane-ink: #fff; --pane-sub: rgba(255,255,255,.65); transform-origin: center; flex: none; border-radius: 30px; box-shadow: 0 0 0 14px #1B0817, 0 0 0 15.5px #4A3044, 0 50px 100px -20px rgba(0,0,0,.7); }
+
+.display { font-family: var(--display); }
+.mono { font-family: var(--mono); }
+
+.btn { border: 0; cursor: pointer; border-radius: 14px; min-height: 44px; padding: 0 18px; font-weight: 700; font-family: var(--display); font-size: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary { background: var(--magenta); color: #fff; }
+.btn-dark { background: var(--plum-800); color: #fff; }
+.btn-ghost { background: rgba(255,255,255,.1); color: #fff; }
+.btn-line { background: #fff; color: var(--plum-800); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn:disabled { opacity: .45; cursor: default; }
+
+.chip { font-size: 11px; font-weight: 800; letter-spacing: .04em; padding: 5px 10px; border-radius: 8px; font-family: var(--display); white-space: nowrap; }
+.chip.neutral { background: #F1E6EC; color: var(--ink-2); }
+.chip.warn { background: var(--saffron-100); color: #8A5300; }
+.chip.live { background: var(--pink-100); color: var(--magenta-600); }
+.chip.good { background: var(--teal-100); color: #0B6355; }
+.chip.bad { background: #FFE3E5; color: #B3202E; }
+
+.eyebrow { font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+/* phone */
+.phone { width: 300px; height: 612px; border-radius: 46px; background: #1B0817; padding: 11px; position: relative; }
+.phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; position: relative; background: var(--cream); display: flex; flex-direction: column; }
+.phone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 84px; height: 22px; border-radius: 12px; background: #1B0817; z-index: 30; }
+.app-head { height: 64px; padding: 0 18px 10px; display: flex; align-items: flex-end; justify-content: space-between; color: #fff; flex: none; }
+.screen-body { flex: 1; padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.card { background: #fff; border-radius: 18px; padding: 14px; box-shadow: 0 8px 22px -14px rgba(62,6,50,.45); }
+
+.option { width: 100%; text-align: left; border: 1.5px solid var(--line); background: #fff; border-radius: 14px; padding: 12px 14px; min-height: 48px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink-2); display: flex; align-items: center; gap: 10px; }
+.option:hover { border-color: #DCC3D2; }
+.option.on { border-color: var(--magenta); background: var(--pink-50); color: var(--magenta-600); }
+
+/* hint ring */
+.hint { position: relative; }
+.hint-ring { position: absolute; inset: -5px; border-radius: 18px; border: 2.5px solid var(--saffron); pointer-events: none; }
+
+.table-row { display: grid; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 10px; font-size: 12.5px; cursor: pointer; border: 0; background: transparent; width: 100%; text-align: left; min-height: 36px; }
+.table-row:hover { background: #FAF1F6; }
+.table-row.sel { box-shadow: inset 0 0 0 1.5px var(--magenta); }
