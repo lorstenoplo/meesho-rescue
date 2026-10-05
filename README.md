@@ -4,7 +4,9 @@
 
 Built by team *The Edge Cases* (IIT Madras) for the Meesho DICE Challenge Season 3, Valmo business track: *“Reducing RTO: getting more orders delivered.”*
 
-![Demo: the rescue engine scoring nearby buyers](docs/demo-scoring.png)
+**▶ Live demo: [meesho-rescue.vercel.app](https://meesho-rescue.vercel.app/)**
+
+<img src="docs/hero.png" alt="Meesho Rescue demo" width="640">
 
 ---
 
@@ -42,7 +44,9 @@ flowchart LR
 - **Final score** = base weight × strongest signal × match multiplier (exact SKU or similar item). The top 3 buyers get the offer first.
 - **Enhanced mode** (our extension) multiplies that score by an intent score from a model of past cart behaviour, so idle carts drop down the list.
 
-![Demo: the customer refuses the parcel at the door](docs/demo-refusal.png)
+<img src="docs/how-it-works.png" alt="Refused at the door, nearby buyers found, dropped at a Kirana Club store, delivered" width="720">
+
+*Refused at the door → nearby buyers found → parcel held at a Kirana Club store → delivered to the buyer.*
 
 ---
 
@@ -56,13 +60,17 @@ An interactive prototype for presenting to business audiences. Only one device i
 | Valmo ops | Rescue engine | Live map, Stage 1 gates, Stage 2 scoring table with the real formula |
 | Kavya's phone | Nearby buyer (C3), Meesho app | Push notification, offer, cash on delivery or UPI, tracking, delivered |
 
+<img src="docs/views.png" alt="Rider app, ops console and buyer app" width="600">
+
 - **Story:** 11 steps and 8 taps. A spotlight with a tapping hand shows exactly what to press next.
 - **Endings:** either the parcel is rescued, or you choose “What if nobody buys?” in Wave 1 to see Wave 2 and then a normal return.
 - **Spec vs Enhanced:** the toggle re-ranks the buyers live.
 
 > **All data in the demo is simulated.** Buyers, parcels, prices, times, the map and the intent values are hand-made demo data, not Meesho data.
 
-### Run it
+### Try it
+
+Open the live demo at **[meesho-rescue.vercel.app](https://meesho-rescue.vercel.app/)**, or run it locally:
 
 Requires Node 18 or later.
 
@@ -104,7 +112,7 @@ React 18 · Vite 5 · Framer Motion (UI animation) · three.js with react-three-
 │       ├── ui.jsx           icons, Hint wrapper, animation presets
 │       └── assets/          illustrations from our deck, Kirana Club logo
 ├── research/                problem statement, scoring spec, research pack, previous-round deck
-└── docs/                    screenshots used in this README
+└── docs/                    the three images in this README
 ```
 
 | Research file | What it is |
@@ -179,3 +187,16 @@ React 18 · Vite 5 · Framer Motion (UI animation) · three.js with react-three-
 - [ ] Wave timings: the demo uses 12 h + 12 h, while our deck says the kirana holds the parcel for 2 days
 - [ ] Rescue discount (10 to 20%)
 - [ ] The kirana handling fee (₹12, from our deck's payout table)
+
+---
+
+## License
+
+The code is released under the [MIT License](LICENSE).
+
+The following belong to their respective owners and are **not** covered by this license:
+- the Meesho, Valmo and Kirana Club names and logos;
+- the DICE Challenge case study and scoring spec PDFs in `research/`;
+- the illustrations taken from our previous-round deck.
+
+They are included only to present this case-study submission.
