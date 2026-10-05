@@ -18,9 +18,9 @@ import avatarBuyer from './assets/avatar_buyer.png'
 
 // Who's who. Only one of these devices is on screen at a time.
 const ROLES = {
-  rider: { name: 'Ravi', role: 'Delivery partner', app: 'Valmo rider app', avatar: avatarRider },
-  ops: { name: 'Valmo ops', role: 'Rescue engine', app: 'Runs automatically in the background', icon: 'console' },
-  buyer: { name: 'Kavya', role: 'Nearby buyer · C3', app: 'Meesho app', avatar: avatarBuyer },
+  rider: { title: 'The delivery partner’s phone', sub: 'Ravi · Valmo rider app', avatar: avatarRider },
+  ops: { title: 'Valmo ops console', sub: 'Rescue engine · runs automatically in the background', icon: 'console' },
+  buyer: { title: 'A nearby buyer’s phone', sub: 'Kavya, buyer C3 · Meesho app', avatar: avatarBuyer },
 }
 const MODES = [
   { id: 'spec', label: 'Spec', tipTitle: 'Spec: the case-study formula',
@@ -216,10 +216,10 @@ function RoleHeader({ scr }) {
             : <span style={{ width: 72, height: 72, borderRadius: '50%', background: 'var(--saffron)', color: 'var(--plum-900)', display: 'grid', placeItems: 'center', flex: 'none' }}><Icon name={r.icon} size={32} /></span>}
           <div style={{ minWidth: 0 }}>
             <div className="eyebrow" style={{ color: 'var(--saffron)', fontSize: 12 }}>You’re seeing</div>
-            <div className="display" style={{ fontSize: 30, fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
-              {r.name}{scr !== 'ops' && <span style={{ fontWeight: 600, opacity: 0.75 }}>’s phone</span>}
+            <div className="display" style={{ fontSize: scr === 'ops' ? 26 : 30, fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
+              {r.title}
             </div>
-            <div style={{ fontSize: 14, opacity: 0.75, whiteSpace: 'nowrap' }}>{r.role} · {r.app}</div>
+            <div style={{ fontSize: 14, opacity: 0.75, whiteSpace: 'nowrap' }}>{r.sub}</div>
           </div>
         </motion.div>
       </AnimatePresence>

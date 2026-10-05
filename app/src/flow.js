@@ -5,19 +5,19 @@ export const DRIVE = 3.4
 // should notice, and what the presenter taps next.
 export const PHASES = {
   enroute: {
-    wait: 'Watch Ravi ride to the customer’s address…',
-    screen: 'rider', scene: 'Ravi is riding to the customer’s address',
+    wait: 'Watch the delivery partner ride to the customer’s address…',
+    screen: 'rider', scene: 'The delivery partner, Ravi, rides to the customer’s address',
     n: 1, actor: 'rider', clock: 'Day 1 · 14:05', status: ['Out for delivery', 'neutral'],
     title: 'A COD parcel is out for delivery',
     body: 'Tier B cotton kurti, ₹499 cash on delivery. The seller has joined Rescue.',
-    cue: 'Tap “I’ve arrived” on Ravi’s phone',
+    cue: 'Tap “I’ve arrived” on the delivery partner’s phone',
   },
   door: {
     screen: 'rider', scene: 'At the door, the customer refuses the parcel',
     n: 2, actor: 'rider', clock: 'Day 1 · 14:11', status: ['At the door', 'neutral'],
     title: 'The buyer refuses it at the door',
     body: 'Today this parcel would go all the way back to the seller, and Valmo pays for both trips.',
-    cue: 'Tap “Customer refused at door” on Ravi’s phone',
+    cue: 'Tap “Customer refused at door” on the delivery partner’s phone',
   },
   stage1: {
     wait: 'The engine checks the parcel by itself…',
@@ -39,10 +39,10 @@ export const PHASES = {
     n: 5, actor: 'rider', clock: 'Day 1 · 14:13', status: ['Rescue eligible', 'warn'],
     title: 'The rider is told: don’t send it back to the seller',
     body: 'Instead of starting a return, the app sends the rider to the nearest Kirana Club store on their route.',
-    cue: 'Tap “Navigate to Rescue Point” on Ravi’s phone',
+    cue: 'Tap “Navigate to Rescue Point” on the delivery partner’s phone',
   },
   toKirana: {
-    wait: 'Watch Ravi ride to the Kirana Club store…',
+    wait: 'Watch the delivery partner ride to the Kirana Club store…',
     screen: 'rider', scene: 'Ravi drops the parcel at a Kirana Club store nearby',
     n: 6, actor: 'rider', clock: 'Day 1 · 14:24', status: ['To Rescue Point', 'warn'],
     title: 'The parcel goes to a Kirana Club store, not back to the seller',
@@ -55,14 +55,14 @@ export const PHASES = {
     n: 7, actor: 'ops', clock: 'Day 1 · 14:30', status: ['Wave 1 live · 12 h', 'live'],
     title: 'Wave 1: the top 3 buyers get the offer',
     body: 'The kirana holds the parcel. Wave 1 lasts 12 h. Each buyer gets at most one Rescue push a day; the original buyer’s area is excluded.',
-    cue: 'Tap the notification on Kavya’s phone',
+    cue: 'Tap the notification on the buyer’s phone',
   },
   offer: {
-    screen: 'buyer', scene: 'Kavya sees the kurti she left in her cart',
+    screen: 'buyer', scene: 'Kavya, a nearby buyer, sees the kurti she left in her cart',
     n: 8, actor: 'buyer', clock: 'Day 1 · 14:33', status: ['Wave 1 live · 12 h', 'live'],
     title: 'Kavya (buyer C3) opens the offer',
     body: 'They had this exact kurti in their cart 5 hours ago. They can pay cash on delivery, like any Meesho order, or pay now with UPI.',
-    cue: 'Tap a payment option on Kavya’s phone to order',
+    cue: 'Tap a payment option on the buyer’s phone to order',
   },
   reserved: {
     wait: 'Watch the rider pick up the parcel from the kirana…',
@@ -73,7 +73,7 @@ export const PHASES = {
     cue: 'Nothing to tap. Watch the pickup',
   },
   delivering: {
-    wait: 'Watch Ravi ride to Kavya’s home…',
+    wait: 'Watch the delivery partner ride to the buyer’s home…',
     screen: 'rider', scene: 'Out for delivery, only 1.4 km away',
     n: 10, actor: 'rider', clock: 'Day 1 · 17:55', status: ['Out for delivery', 'live'],
     title: 'Out for delivery to buyer C3',
